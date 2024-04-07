@@ -2,8 +2,17 @@ package no.ntnu.opsys2024.jonasolsen;
 
 import java.util.Scanner;
 
+/**
+ * Starts the java application.
+ *
+ * Uses the first-come-first-served algorithm to generate output based on user input.
+ */
 public class RunFCFS {
 
+    /**
+     * Method for starting the application
+     * @param args
+     */
     public static void main(String[] args) {
         RunFCFS s = new RunFCFS();
 

@@ -2,8 +2,18 @@ package no.ntnu.opsys2024.jonasolsen;
 
 import java.util.Scanner;
 
+/**
+ * Starts the java application.
+ *
+ * Uses the Preemptive Priority Scheduling Algorithm to generate output based on user input.
+ */
 public class RunPPS {
 
+
+    /**
+     * Method for starting the application.
+     * @param args
+     */
     public static void main(String[] args) {
         RunPPS s = new RunPPS();
 

@@ -2,9 +2,18 @@ package no.ntnu.opsys2024.jonasolsen;
 
 import java.util.ArrayList;
 
+/**
+ * Represents a preemptive priority scheduling algorithm.
+ */
+
 public class PpsScheduler {
     ArrayList<Process> processes;
 
+    /**
+     * Initializes the parameters.
+     * @param processes A list of processes with predetermined arrival times, burst times
+     *                  and priority levels.
+     */
     public PpsScheduler(Process[] processes) {
         // Bubble sort the list by arrival time (just in case user input is not in chronological order)
         for (int i = 0; i < processes.length; i++) {
@@ -22,23 +31,33 @@ public class PpsScheduler {
             }
         }
 
-        //Convert Process[] to ArrayList[] because we require a dynamic list-size.
+        //Convert Process[] to ArrayList[]
+        //NOTE: This was not necessary in the final solution. A Process[] would have also been ok.
         this.processes = new ArrayList<>();
         for (int i = 0; i < processes.length; i++) {
             this.processes.add(processes[i]);
         }
 
+        //Runs the algorithm.
         this.run();
     }
+
+    /**
+     * Represents the algorithm itself.
+     *
+     * The output is the average waiting time and average turnaround time for processes running
+     * on the CPU.
+     */
     private void run() {
 
         //Mechanism for simulating time.
         int timer = 0;
+
+        //Process currently running on the CPU.
         Process runningProcess = null;
 
 
         boolean finished = false;
-
         while(!finished) {
 
             int finishedProcesses = 0;
@@ -111,10 +130,7 @@ public class PpsScheduler {
 
         }
 
-        //Calculate average waiting time and average turnaround time.
-
-        //Turnaround = Completion time - Arrival time
-        //Waiting time = Total waiting time - time running - arrival time
+        //Calculate and present average waiting time and average turnaround time.
 
         int[] turnAroundTimes = new int[processes.size()];
         int[] waitingTimes = new int[processes.size()];

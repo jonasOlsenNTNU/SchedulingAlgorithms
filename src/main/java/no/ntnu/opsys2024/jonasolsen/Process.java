@@ -1,5 +1,8 @@
 package no.ntnu.opsys2024.jonasolsen;
 
+/**
+ * Represents a process running on a CPU.
+ */
 public class Process {
 
     private int pID;

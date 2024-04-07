@@ -1,10 +1,20 @@
 package no.ntnu.opsys2024.jonasolsen;
 
-import java.util.Arrays;
 
+/**
+ * Represents a first-come-first-served algorithm.
+ */
 public class FcfsScheduler {
     Process[] processes;
 
+    /**
+     * Constructor automatically runs the algorithm.
+     *
+     * The output is the average waiting time and average turnaround time for processes running
+     * on the CPU.
+     *
+     * @param p A list of processes with predetermined arrival times and burst times.
+     */
     public FcfsScheduler(Process[] p) {
         this.processes = p;
 
@@ -58,6 +68,8 @@ public class FcfsScheduler {
             }
         }
 
+
+        //Calculate and present average waiting time and average turnaround time.
         int totalWaitingTime = 0;
         for (int i = 0; i < waitingTimes.length; i++) {
             totalWaitingTime = totalWaitingTime + waitingTimes[i];
